@@ -1,0 +1,60 @@
+DURHOS, S. A.. empresa dedicada a la compra-venta de material filatélico y
+numismático, ha decidido desarrollar una base de datos para llevar un mejor control de
+su negocio. En una primera fase se contemplarán únicamente las monedas españolas,
+dejando para más adelante la parte filatélica y la ampliación a material de otros países.
+Tras una conversación con el dueño de la empresa y la lectura de diversos libros y
+publicaciones especializados, hemos obtenido la siguiente información:
+
+1)Existen modelos de monedas, identificados por un código. y caracterizados por una serie de propiedades, 
+que harán que un modelo sea identificable externamente por los ciudadanos”, 
+tales como el valor facial, la unidad monetaria (pesetas, euros. ctc.), diámetro, peso en gramos y una descripción. 
+Habrá de especificarse, además, el metal o metales que se emplearán para cada modelo, 
+así como la proporción de éstos y, en su caso. la ley del mismo (por ejemplo. plata de 925)
+
+2)Ajustándose a los anteriores modelos, se realizarán moldes o troqueles que
+servirán para la acuñación de las monedas”. Un molde estará identificado por un
+código, vendrá caracterizado por un año de acuñación, y estamos interesados en
+almacenar determinadas características que pueden aparecer (0 10) grabadas en el
+mismo:
+
+El año. grabado en caracteres visibles. y que no tiene por qué coincidir con el de acuñación
+
+Determinadas monedas (0. mejor dicho, los troqueles con que se acuñan) tienen,
+normalmente a ambos lados de la fecha anterior, un par de estrellas en cuyo
+interior se graba en diminutos caracteres la fecha (habitualmente, la de acuñación).
+No estamos tan interesados en conocer el número de estrellas que contiene como
+la cifra que aparece grabada en ellas”* (caso de existir).
+
+Una descripción, que podremos utilizar para especificar los distintos motivos o
+leyendas que aparecerán en la moneda.
+
+3)Una moneda se acuñará de acuerdo a un único molde o troquel. 
+Sin embargo, para un mismo molde podrían obtenerse distintos tipos de monedas. 
+Esto ocurrirá en el caso de que por causa de roturas en el troquel, defectos de acuñación, o cualquier otra circunstancia, 
+un conjunto de monedas presenten algún tipo de variante respecto al troquel original. 
+Solamente estamos interesados en aquellas variantes que aparecen recogidas en los catálogos utilizados por los coleccionistas. 
+Toda moneda (incluidas las variantes catalogadas) se identificará por un código único, 
+y tendrá como características propias si es 0 no variante y, en caso de serlo, una descripción del error que presenta la moneda *
+
+4)Las monedas, en función de su estado de conservación, tendrán un precio
+aproximado. Un estado de conservación se identifica por sus iniciales (BC, MBC,
+EBC, SC, etc.) y tiene un nombre y una descripción. Interesa almacenar el precio
+estimado de una moneda según su estado de conservación.
+
+5)La empresa tendrá ejemplares concretos de monedas, que se identificarán por el
+código de la moneda más un número correlativo. Los ejemplares podrán haber sido
+adquiridos a proveedores 0 conseguidas por cualquier otro medio (adquiridas en
+mercadillos, regaladas, llegadas a nuestro poder por el uso cotidiano, etc). Aunque
+estamos interesados en almacenar (siempre que lo conozcamos) el precio 
+y la fecha de adquisición del ejemplar, sólo estamos interesados en la procedencia de aquellos que fueron adquiridos a proveedores. 
+De los que nos interesa conocer su nombre, dirección y teléfono de contacto.
+
+6)Asimismo, los ejemplares podrán ser vendidos a clientes. Cada ejemplar podrá
+ser vendido como máximo a un cliente, y no se admiten devoluciones. Interesa
+conocer la fecha y el precio de venta, y del cliente estamos interesados en su nombre,
+dirección, teléfono y el número de compras que nos ha realizado.
+
+7)Todo ejemplar se encontrará con un estado de conservación determinado. Éste, sín
+embargo. no tiene por qué coincidir exactamente con los especificados anteriormente,
+sino que puede necesitar un pequeño ajuste (indicado por los signos *+' y *-”) 
+y un comentario (por ejemplo, BC --. “Pequeño golpe en el borde”),
