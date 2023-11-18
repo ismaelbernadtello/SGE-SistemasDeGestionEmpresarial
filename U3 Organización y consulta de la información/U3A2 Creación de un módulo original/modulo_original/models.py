@@ -1,11 +1,11 @@
 from odoo import api, models, fields
 
 
-class Anime(models.Model):
+class anime(models.Model):
     _name = 'gestion_anime.anime'
     _description = 'Clase para gestionar animes'
 
-    name = fields.Char(string='Título del Anime', required=True)
+    nombre = fields.Char(string='Título del Anime', required=True)
     genero = fields.Char(string='Género')
     demografia = fields.Char(string='Demografía')
     lanzamiento = fields.Integer(string='Año de Lanzamiento')
@@ -21,7 +21,7 @@ class Episodio(models.Model):
     _name = 'gestion_anime.episodio'
     _description = 'Clase para gestionar los episodios del anime'
 
-    name = fields.Char(string='Título del Episodio', required=True)
+    titulo = fields.Char(string='Título del Episodio', required=True)
     duracion = fields.Float(string='Duración (min)')
     lanzamiento = fields.Date(string='Fecha de Lanzamiento')
     puntuacion = fields.Float(string='Puntuación')
