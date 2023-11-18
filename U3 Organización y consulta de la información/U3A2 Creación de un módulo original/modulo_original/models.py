@@ -1,7 +1,7 @@
 from odoo import api, models, fields
 
 
-class anime(models.Model):
+class Anime(models.Model):
     _name = 'gestion_anime.anime'
     _description = 'Clase para gestionar animes'
 

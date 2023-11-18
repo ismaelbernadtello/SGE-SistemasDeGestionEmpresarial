@@ -2,19 +2,19 @@
 <odoo>
 	<record id="anime_action" model="ir.actions.act_window">
 		<field name="name">Action anime</field>
-		<field name="res_model">modulo_original.anime</field>
+		<field name="res_model">gestion_anime.anime</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
 	<record id="episodios_action" model="ir.actions.act_window">
 		<field name="name">Action episodios</field>
-		<field name="res_model">modulo_original.episodios</field>
+		<field name="res_model">gestion_anime.episodio</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
 	<record id="view_anime_tree" model="ir.ui.view">
 		<field name="name">anime.tree</field>
-		<field name="model">modulo_original.anime</field>
+		<field name="model">gestion_anime.anime</field>
 		<field name="arch" type="xml">
 			<tree>
 				<field name="nombre" />
@@ -29,7 +29,7 @@
 
 	<record id="view_episodios_tree" model="ir.ui.view">
 		<field name="name">episodios.tree</field>
-		<field name="model">modulo_original.episodios</field>
+		<field name="model">gestion_anime.episodio</field>
 		<field name="arch" type="xml">
 			<tree>
 				<field name="titulo" />
@@ -43,7 +43,7 @@
 
 	<record id="view_anime_form" model="ir.ui.view">
 		<field name="name">anime.form</field>
-		<field name="model">modulo_original.anime</field>
+		<field name="model">gestion_anime.anime</field>
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
@@ -62,7 +62,7 @@
 
 	<record id="view_episodios_form" model="ir.ui.view">
 		<field name="name">episodios.form</field>
-		<field name="model">modulo_original.episodios</field>
+		<field name="model">gestion_anime.episodio</field>
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
@@ -81,7 +81,7 @@
 
 	<record id="view_anime_search" model="ir.ui.view">
 		<field name="name">anime.search</field>
-		<field name="model">modulo_original.anime</field>
+		<field name="model">gestion_anime.anime</field>
 		<field name="arch" type="xml">
 			<search>
 				<field name="nombre" />
@@ -96,7 +96,7 @@
 
 	<record id="view_episodios_search" model="ir.ui.view">
 		<field name="name">episodios.search</field>
-		<field name="model">modulo_original.episodios</field>
+		<field name="model">gestion_anime.episodio</field>
 		<field name="arch" type="xml">
 			<search>
 				<field name="titulo" />
