@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "modulo_original",
+    'name': "gestion_anime",
     'summary': """Modulo original para la tarea U3A2""",
     'description': """
         Modulo original para la tarea U3A2
-        
+        Modulo para apuntar los capitulos de anime que vamos viendo de nuestros animes favoritos y puntuarlos
     """,
     'author': "ismael bernad tello",
     'website': "http://www.salesianos.edu",
