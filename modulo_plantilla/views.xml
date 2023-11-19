@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- NECESARIO PARA QUE FUNCIONE EL MENÚ!!!!!!!!! -->
+<record id="plantilla_action" model="ir.actions.act_window">
+	<field name="name">Action Name</field>
+	<field name="res_model">plantilla</field>
+	<field name="view_mode">tree,form</field>		
+</record>
+
+
+<record id="plantilla_view_tree" model="ir.ui.view">
+	<field name="name">plantilla.view.tree</field>
+	<field name="model">plantilla</field>
+	<field name="arch" type="xml">
+		<tree>
+			<field name="id" />
+			<field name="name" />
+			<field name="color" />
+			<field name="fecha" />
+			<field name="fecha_hora" />
+			<field name="numero" />
+			<field name="numero_decimal" />
+			<field name="texto" />
+			<field name="booleano" />
+			<field name="fecha_salida" />
+		</tree>
+	</field>
+</record>
+
+<record id="plantilla_view_form" model="ir.ui.view">
+	<field name="name">plantilla.view.form</field>
+	<field name="model">plantilla</field>
+	<field name="arch" type="xml">
+		<form string="Plantilla">
+			<sheet>
+				<group>
+					<field name="id" />
+					<field name="name" />
+					<field name="color" />
+					<field name="fecha" />
+					<field name="fecha_hora" />
+					<field name="numero" />
+					<field name="numero_decimal" />
+					<field name="texto" />
+					<field name="booleano" />
+					<field name="fecha_salida" />
+				</group>
+			</sheet>
+		</form>
+	</field>
+</record>
+
+
+<record id="vendedor_search" model="ir.ui.view">
+		<field name="name">vendedor.search</field>
+		<field name="model">salesianos.vendedor</field>
+		<field name="arch" type="xml">
+			<search string="vendedor">
+				<field name="name" />
+				<field name="color"/>
+				<field name="fecha"/>
+				
+				<!-- Esto es para tener un filtro personalizado 
+				que solo muestra registros cuya fecha de salida
+				sean anteriores a la fecha actual-->
+				<filter name="despedidos" 
+						string="despedidos" 
+						domain="[('fecha_salida', '&lt;', datetime.date.today())]"  />
+											<!--&lt; es el equivalente a poner 'menor que'< -->
+											<!--&gt; es el equivalente a poner > 'mayor que'-->
+											<!-- &lt;    <    less than    signo de menor que
+											&gt;    >    more than    signo de mayor que
+											&amp;    &    ampersand    ampersand
+											&quot;    "    quotation mark    comillas
+											&nbsp;    (espacio en blanco)    non-breaking space    espacio en blanco
+											&apos;    '    apostrophe    apóstrofo -->
+				
+				<!-- Esto permite agrupar por el campo que le indiquemos
+					nos devuelve los registros que pertenencen a esa agrupación-->
+				<group string="Zona de agrupamientos">
+					<filter name="agrupar por color"
+							string="agrupar por color"
+							context="{'group_by':'color'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+
+
+<!--SIEMPRE AL FINAL!!!!!!!!!!!!!!!!!!!!!!!!!!!
+EN PARENT SE PONE EL ID DEL PRIMER MENUITEM QUE PARA NO LIARLA PONEMOS EL NOMBRE DEL MODULO-->
+<menuitem
+	id="modulo_plantilla"
+	name="modulo_plantilla"
+	sequence="10"/>
+<menuitem
+	id="plantilla"
+	name="plantilla"
+	action="plantilla_action"
+	parent="modulo_plantilla"
+	sequence="10"/>
+
+</odoo>
