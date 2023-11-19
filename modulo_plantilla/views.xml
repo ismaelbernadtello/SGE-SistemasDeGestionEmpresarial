@@ -5,7 +5,7 @@
 <record id="plantilla_action" model="ir.actions.act_window">
 	<field name="name">Action Name</field>
 	<field name="res_model">plantilla</field>
-	<field name="view_mode">tree,form</field>		
+	<field name="view_mode">tree,form,calendar</field>		
 </record>
 
 
@@ -24,6 +24,9 @@
 			<field name="texto" />
 			<field name="booleano" />
 			<field name="fecha_salida" />
+			<!-- many2many_tags sirve para las relaciones muchos a muchos 
+			mostrar registros y no que ponga id_proveedor 3registros, te ponga la lista-->
+			<field name="id_proveedor" widget="many2many_tags"/>
 		</tree>
 	</field>
 </record>
@@ -45,12 +48,24 @@
 					<field name="texto" />
 					<field name="booleano" />
 					<field name="fecha_salida" />
+					<field name="id_proveedor"/>
 				</group>
 			</sheet>
 		</form>
 	</field>
 </record>
 
+<record id="plantilla_calendar" model="ir.ui.view" >
+		<field name="name">plantilla_calendar</field>
+		<field name="model">plantilla</field>
+		<field name="arch" type="xml">
+			<calendar string="vendedor" date_start="fecha_salida">
+			<!-- Los field se ven si haces clic en un evento del calendario -->
+				<field name="name"/>
+				<field name="company"/>
+			</calendar>
+		</field>
+	</record>
 
 <record id="vendedor_search" model="ir.ui.view">
 		<field name="name">vendedor.search</field>
