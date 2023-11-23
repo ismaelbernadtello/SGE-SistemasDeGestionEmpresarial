@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="anime_action" model="ir.actions.act_window">
+		<field name="name">Action anime</field>
+		<field name="res_model">gestion_anime.anime</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record id="episodios_action" model="ir.actions.act_window">
+		<field name="name">Action episodios</field>
+		<field name="res_model">gestion_anime.episodio</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record id="action_ver_episodio" model="ir.actions.act_window">
+        <field name="name">Ver Episodio</field>
+        <field name="res_model">gestion_anime.ver_episodio</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+	<record id="view_anime_tree" model="ir.ui.view">
+		<field name="name">anime.tree</field>
+		<field name="model">gestion_anime.anime</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="nombre" />
+				<field name="genero" />
+				<field name="demografia"/>
+				<field name="lanzamiento" />
+				<field name="episodios_ids" />
+				<field name="total_episodios" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="view_episodios_tree" model="ir.ui.view">
+		<field name="name">episodios.tree</field>
+		<field name="model">gestion_anime.episodio</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="titulo" />
+				<field name="duracion" />
+				<field name="lanzamiento" />
+				<field name="puntuacion" />
+				<field name="anime_id" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="view_ver_episodio_tree" model="ir.ui.view">
+		<field name="name">ver_episodio.tree</field>
+		<field name="model">gestion_anime.ver_episodio</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="titulo"/>
+				<field name="duracion"/>
+				<field name="lanzamiento"/>
+				<field name="puntuacion"/>
+				<field name="link"/>
+				<field name="idioma"/>
+				<field name="episodio_relacionado_id"/>
+			</tree>
+		</field>
+	</record>
+
+
+
+	<record id="view_anime_form" model="ir.ui.view">
+		<field name="name">anime.form</field>
+		<field name="model">gestion_anime.anime</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="nombre" />
+						<field name="genero" />
+						<field name="demografia"/>
+						<field name="lanzamiento" />
+						<field name="episodios_ids" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+
+	<record id="view_episodios_form" model="ir.ui.view">
+		<field name="name">episodios.form</field>
+		<field name="model">gestion_anime.episodio</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="titulo" />
+						<field name="duracion" />
+						<field name="lanzamiento" />
+						<field name="puntuacion" />
+						<field name="anime_id" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="view_ver_episodio_form" model="ir.ui.view">
+        <field name="name">ver_episodio.form</field>
+        <field name="model">gestion_anime.ver_episodio</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="titulo"/>
+                        <field name="duracion"/>
+                        <field name="lanzamiento"/>
+                        <field name="puntuacion"/>
+                        <field name="link"/>
+                        <field name="idioma"/>
+                        <field name="episodio_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+	<record id="view_anime_search" model="ir.ui.view">
+		<field name="name">anime.search</field>
+		<field name="model">gestion_anime.anime</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="nombre" />
+				<field name="genero" />
+				<field name="demografia"/>
+				<field name="lanzamiento" />
+				<field name="episodios_ids" />
+				<field name="total_episodios" />
+			</search>
+		</field>
+	</record>
+
+	<record id="view_episodios_search" model="ir.ui.view">
+		<field name="name">episodios.search</field>
+		<field name="model">gestion_anime.episodio</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="titulo" />
+				<field name="duracion" />
+				<field name="lanzamiento" />
+				<field name="puntuacion" />
+				<field name="anime_id" />
+			</search>
+		</field>
+	</record>
+
+	<menuitem id="gestion_anime" name="gestion_anime" sequence="10"/>
+	<menuitem id="anime" name="anime" action="anime_action" parent="gestion_anime" sequence="10"/>
+	<menuitem id="episodios" name="episodios" action="episodios_action" parent="gestion_anime" sequence="10"/>
+	<menuitem id="menu_ver_episodio" name="Ver Episodio" parent="gestion_anime" action="action_ver_episodio"/>
+</odoo>

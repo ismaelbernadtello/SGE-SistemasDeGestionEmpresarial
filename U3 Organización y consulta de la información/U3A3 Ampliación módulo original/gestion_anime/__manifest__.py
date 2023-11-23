@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
     'name': "gestion_anime",
-    'summary': """Modulo para la tarea U3A2 """,
+    'summary': """Modulo para la tarea U3A3 """,
     'description': """
-        Modulo para la tarea U3A2 sobre la gestion de animes
+        Modulo para la tarea U3A3 sobre la gestion de animes
     """,
     'author': "ismael bernad tello",
     'website': "http://www.salesianos.edu",
@@ -20,5 +20,8 @@
     # always loaded
     'data': [
         'views.xml',
+    ],
+    'images': [
+        'static/description/logo.png',
     ],
 }
