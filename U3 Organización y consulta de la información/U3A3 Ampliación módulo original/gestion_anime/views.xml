@@ -27,8 +27,8 @@
 				<field name="genero" />
 				<field name="demografia"/>
 				<field name="lanzamiento" />
-				<field name="episodios_ids" />
 				<field name="total_episodios" />
+				<field name="media_puntuacion" />
 			</tree>
 		</field>
 	</record>
@@ -38,11 +38,12 @@
 		<field name="model">gestion_anime.episodio</field>
 		<field name="arch" type="xml">
 			<tree>
+				<field name="id"/>
+				<field name="anime_id" />
 				<field name="titulo" />
 				<field name="duracion" />
 				<field name="lanzamiento" />
 				<field name="puntuacion" />
-				<field name="anime_id" />
 			</tree>
 		</field>
 	</record>
@@ -52,6 +53,8 @@
 		<field name="model">gestion_anime.ver_episodio</field>
 		<field name="arch" type="xml">
 			<tree>
+				<field name="id"/>
+				<field name="anime_id"/>
 				<field name="titulo"/>
 				<field name="duracion"/>
 				<field name="lanzamiento"/>
@@ -75,6 +78,7 @@
 						<field name="demografia"/>
 						<field name="lanzamiento" />
 						<field name="episodios_ids" />
+						<field name="verepisodio_ids"/>
 					</group>
 				</sheet>
 			</form>
@@ -107,12 +111,13 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="titulo"/>
-                        <field name="duracion"/>
-                        <field name="lanzamiento"/>
-                        <field name="puntuacion"/>
-                        <field name="link"/>
-                        <field name="idioma"/>
+						<field name="anime_id"/>
+						<field name="titulo"/>
+						<field name="duracion"/>
+						<field name="lanzamiento"/>
+						<field name="puntuacion"/>
+						<field name="link"/>
+						<field name="idioma"/>
                     </group>
                 </sheet>
             </form>
@@ -140,11 +145,12 @@
 		<field name="model">gestion_anime.episodio</field>
 		<field name="arch" type="xml">
 			<search>
+				<field name="id"/>
+				<field name="anime_id" />
 				<field name="titulo" />
 				<field name="duracion" />
 				<field name="lanzamiento" />
 				<field name="puntuacion" />
-				<field name="anime_id" />
 			</search>
 		</field>
 	</record>
