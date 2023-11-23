@@ -21,7 +21,4 @@
     'data': [
         'views.xml',
     ],
-    'images': [
-        'static/description/logo.png',
-    ],
 }
