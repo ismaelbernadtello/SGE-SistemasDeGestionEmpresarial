@@ -1,4 +1,5 @@
 from odoo import api, models, fields
+from statistics import mean
 
 
 class Anime(models.Model):
@@ -27,15 +28,29 @@ class Anime(models.Model):
     def _compute_total_episodios(self):
         for anime in self:
             anime.total_episodios = len(anime.episodios_ids)
-    
+            
+    @api.depends('verepisodio_ids.puntuacion')
     def _compute_media_puntuacion(self):
         for anime in self:
-            if anime.episodios_ids:
-                # Calcula la media de las puntuaciones de los episodios
-                media_puntuacion = sum(episodio.puntuacion for episodio in anime.episodios_ids) / len(anime.episodios_ids)
-                anime.media_puntuacion = media_puntuacion
+            if anime.verepisodio_ids:
+                # Obtén las puntuaciones de todos los episodios del anime
+                puntuaciones = [ver_episodio.puntuacion for ver_episodio in anime.verepisodio_ids if ver_episodio.puntuacion is not None]
+                
+                if puntuaciones:
+                
+                    puntuaciones = [p for p in puntuaciones if p is not None]
+                    
+                    if puntuaciones:
+                        # Calcula la media de las puntuaciones si hay al menos un dato
+                        anime.media_puntuacion = mean(puntuaciones)
+                    else:
+                        anime.media_puntuacion = 0.0
+                else:
+                    anime.media_puntuacion = 0.0
             else:
                 anime.media_puntuacion = 0.0
+
+
 
 class Episodio(models.Model):
     _name = 'gestion_anime.episodio'
@@ -46,7 +61,7 @@ class Episodio(models.Model):
     titulo = fields.Char(string='Título del Episodio', required=True)
     duracion = fields.Float(string='Duración (min)')
     lanzamiento = fields.Date(string='Fecha de Lanzamiento')
-    puntuacion = fields.Float(string='Puntuación')
+    puntuacion = fields.Integer(string='Puntuación')
     
     
 class VerEpisodio(models.Model):
