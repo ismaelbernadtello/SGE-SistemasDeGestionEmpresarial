@@ -1,0 +1,8 @@
+<aura:component>
+    <!-- ESTO ES LA VISTA -->
+    <aura:attribute name="nombre" type="String" default="Mundo"/>
+    <!-- La forma de imprimir variables en salesforce es de esta forma-->
+    <h1>Hola {!v.nombre}</h1> 
+    <lightning:input label="Nombre" name="nombre" value="{!v.nombre}"/>
+    <lightning:button label="Saludar" onclick="{!c.saludar}"/>    
+</aura:component>	
