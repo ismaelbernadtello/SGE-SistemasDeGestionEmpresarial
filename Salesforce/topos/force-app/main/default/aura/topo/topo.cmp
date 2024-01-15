@@ -1,0 +1,6 @@
+<aura:component>
+    <!-- ESTO ES LA VISTA -->
+    <!-- La forma de imprimir variables en salesforce es de esta forma-->
+    <br></br>
+    <lightning:button label="Topo"/>
+</aura:component>
