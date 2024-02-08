@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION" description="Event template">
+	<aura:attribute name="nombre" type="String"/>
+	<aura:attribute name="apellido" type="String"/>
+
+</aura:event>
+
