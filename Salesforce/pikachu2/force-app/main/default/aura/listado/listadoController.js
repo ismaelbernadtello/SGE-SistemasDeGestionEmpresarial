@@ -3,7 +3,7 @@
 
     },
     clearList : function(component, event, helper) {
-        component.set("v.lista", []);
+        component.set("v.lista", []); //dentro de la vista se le asigna un valor vacio a la lista
     },
     addToList : function(component, event, helper) {
         var lista = component.get("v.lista");

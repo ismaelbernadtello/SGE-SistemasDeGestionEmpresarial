@@ -1,11 +1,11 @@
-.THIS.active {
+.THIS.active { /*Se aplica a los topos que tienen el booleano isTopo en true*/
 	background-color:green;
     }
-.THIS.inactive {
+.THIS.inactive {/*Se aplica a los topos que tienen el booleano isTopo en false*/
 	background-color:red;
 } 
 
-.THIS.topo {
+.THIS.topo { /*Es el estilo que tienen por defecto los topos, este se aplica al span que sustituye a una foto que habria en un juego real*/
 	width: 30px;
 	height: 30px;
 

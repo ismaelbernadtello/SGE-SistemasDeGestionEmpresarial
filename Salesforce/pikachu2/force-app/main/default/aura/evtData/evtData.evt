@@ -2,5 +2,8 @@
 	<aura:attribute name="nombre" type="String"/>
 	<aura:attribute name="apellido" type="String"/>
 
+	<!--Se crea usando -->
+
 </aura:event>
 
+ 

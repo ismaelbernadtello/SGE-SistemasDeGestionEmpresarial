@@ -24,9 +24,9 @@
         });
 
         insertScoreApex.setParams({
-             "nombre": jugador,
-             "puntuacion": component.get("v.marcador")
-         });
+            "nombre": jugador,
+            "puntuacion": component.get("v.marcador")
+        });
 
         $A.enqueueAction(insertScoreApex);
 

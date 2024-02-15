@@ -1,6 +1,12 @@
 <aura:component>
-	<aura:attribute name="nombre" type="String" default="Mundo"/>
-	<h1>Hola {!v.nombre}</h1>
-	<lightning:input type="text" label="Nombre" value="{!v.nombre}"/>
-	<lightning:button label="Saludar" onclick="{!c.saludar}"/>
+	<!-- Es una variable llamada nombre del tipo string y que su valor por defecto es la palabra mundo -->
+	<aura:attribute name="nombre" type="String" default="Mundo"/> 
+	<!-- Muestra el valor de la variable nombre. -->
+	<h1>Hola {!v.nombre}</h1> 
+	<!-- Muestra un input para que el usuario pueda cambiar el valor de la variable nombre -->
+	<lightning:input type="text" label="Nombre" value="{!v.nombre}"/> 
+	<lightning:button label="Saludar" onclick="{!c.saludar}"/> 
 </aura:component>	
+
+<!--!c hace referencia al controlador-->
+<!--!v hace referencia a la vista-->

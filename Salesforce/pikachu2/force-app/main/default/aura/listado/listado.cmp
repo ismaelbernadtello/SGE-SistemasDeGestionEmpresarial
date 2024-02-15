@@ -1,16 +1,20 @@
 <aura:component>
 <h1></h1>
-	<aura:handler event="c:evtData" action="{!c.addToList}"/>
-	<aura:attribute name="mensaje" type="string"/>
-	<aura:attribute name="lista" type="String[]" default="['uno','dos','tres']"/>
+	<!-- Manejador de eventos, se queda esperando a la escucha de eventos del tipo evtData 
+	Cuando se produce un evento de ese tipo se ejecuta el método que tenemos en el action. En este caso se llena la lista con datos-->
+	<aura:handler event="c:evtData" action="{!c.addToList}"/> 
+	<aura:attribute name="mensaje" type="string"/> 
+	<aura:attribute name="lista" type="String[]" default="['uno','dos','tres']"/> <!-- lista de strings -->
 	<span>ultimo elemento añadido es {!v.mensaje}</span>
+	
 	<table>
-		
-		<aura:iteration items="{!v.lista}" var="elemento">
+		<!-- aura:iteration permite iterar entre una lista de datos -->
+		<aura:iteration items="{!v.lista}" var="elemento"> 
 			<tr>
 				<td>{!elemento}</td>
 			</tr>
 		</aura:iteration>
 	</table>
+	<!-- Botón para limpiar la lista, al hacer click se llama a la función clearList del controlador -->
 	<input type="button" value="limpiar lista" onclick="{!c.clearList}"/>
 </aura:component>	
