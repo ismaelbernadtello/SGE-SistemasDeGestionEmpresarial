@@ -1,3 +1,6 @@
 <aura:event type="APPLICATION" description="Event template">
+
+	<!-- Puntuación del topo, coge valor cuando se dispara con la función topoClick -->
 	<aura:attribute name="molePoint" type="Integer"/>  
+
 </aura:event> 

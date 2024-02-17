@@ -2,8 +2,10 @@
 <aura:component controller="RandomApex">
 	<!--Ponemos un manejador de eventos que llama a la función doInit. Esta función le da valor de forma aleatoria a el atributo isTopo-->
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
 	<!--Atributo booleano que dice si es un topo o no. Lo usamos para cambiar la puntuación en función de su valor y aplicar una clase CSS u otra-->
 	<aura:attribute type="Boolean" name="isTopo"/>
+
 	<!--Es el cuadrado que representa el topo. 
 		Cuando hacemos clic sobre él se llama a una función que suma a la puntuación en función de si es un topo de verdad-->
 	<span class="topo" aura:id="topo" onclick="{!c.topoClick}">5</span> 

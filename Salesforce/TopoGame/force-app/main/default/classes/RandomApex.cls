@@ -11,10 +11,20 @@ public with sharing class RandomApex {
 
     @AuraEnabled
     public static Void insertScore(String nombre, String puntuacion) {
-        //Name y DunsNumber son columnas de la tabla Account. Cuando tengamos que usar más tenemos que mirar cuales existen y elegir cualquiera que coincida el tipo de dato
+        /*Name y DunsNumber son columnas de la tabla Account. 
+        Cuando tengamos que usar más tenemos que mirar cuales existen y elegir cualquiera que coincida el tipo de dato*/
+
         Account account = new Account(Name=nombre, DunsNumber=puntuacion);
         insert account; //Se añade el registro a la base de datos
-        //También se puede hacer: delete account con este se elimina el registro de la base de datos
+
+        //También se puede hacer: delete account, con este se elimina el registro de la base de datos
+        //Si quisieramos hacer un update, sería:
+        /*
+        Account[] accounts =[SELECT Name, DunsNumber
+                        FROM Account WHERE DunsNumber=:condition limit 1]; Primero se hace una consulta para obtener el registro que queremos modificar
+        accounts[0].DunsNumber = '1234567890';                             Se modifica el registro
+        UPDATE accounts;                                                   Se actualiza el registro
+        */
     }
 
     @AuraEnabled
@@ -29,5 +39,4 @@ public with sharing class RandomApex {
             throw new AuraHandledException(e.getMessage());
         }
     }
-
 }

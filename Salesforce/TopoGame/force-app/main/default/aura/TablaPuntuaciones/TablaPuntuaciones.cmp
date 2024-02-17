@@ -1,17 +1,18 @@
 <aura:component controller="RandomApex">
+
 	<!-- Puntuaciones es un array del tipo Account[] una tabla/objeto predeterminado de salesforce -->
 	<aura:attribute name="puntuaciones" type="Account[]"/>
-	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/> <!-- Llama a la función doInit del controlador, en cuanto se carga el componente -->
 	<table> 
 		<tbody>
 			<tr>
 				<th>Nombre</th>
 				<th>Puntuación</th>
 			</tr>
-			<aura:iteration items="{!v.puntuaciones}" var="puntuacion">
+			<aura:iteration items="{!v.puntuaciones}" var="puntuacion"> <!-- Itera sobre el array puntuaciones -->
 				<tr>
-					<td>{!puntuacion.Name}</td>
-					<td>{!puntuacion.DunsNumber}</td>
+					<td>{!puntuacion.Name}</td> <!-- Muestra el nombre del jugador-->
+					<td>{!puntuacion.DunsNumber}</td> <!-- Muestra la puntuación -->
 				</tr>
 			</aura:iteration>
 		</tbody>

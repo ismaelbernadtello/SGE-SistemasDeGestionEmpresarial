@@ -1,7 +1,13 @@
 <aura:component controller="RandomApex">
+	<!-- Evento que se dispara cuando se hace click en el topo y este ha cargado su puntuación en el evento puntuacion -->
 	<aura:handler event="c.Puntuacion" action="{!c.manejarEvento}"/>
+
+	<!--Atributo que almacena la puntuación total de la partida-->
 	<aura:attribute name="marcador" type="Integer" default="0"/>
-	tu marcador es {!v.marcador}
+	tu marcador es {!v.marcador} <!-- Muestra el marcador actual -->
+	<br>
+	
+	<!--Input que al hacer clic en él se guarda la puntuación en la base de datos junto con el nombre del jugador-->
 	<input type="button" onclick="{!c.guardarScore}" value="Guardar"/>  
 	nombre del judador: <input type="text" aura:id="nombrejugador" value=""/>
 </aura:component>	
