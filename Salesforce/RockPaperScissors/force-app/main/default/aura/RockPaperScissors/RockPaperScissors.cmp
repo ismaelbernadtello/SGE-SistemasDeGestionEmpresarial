@@ -1,8 +1,10 @@
 <aura:component controller="Round">
+    <!--Llamamos a la función doInit al cargar el componente-->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:attribute name="playerNumber" type="Integer" default="1"/>
-    <aura:attribute name="playerChoice" type="String" default="Rock"/>
-    <aura:attribute name="round" type="Integer" default="1"/>
+    <!--Atributos del componente-->
+    <aura:attribute name="playerNumber" type="Integer" default="1"/> <!--Número del jugador. Cambia entre 1 o 2-->
+    <aura:attribute name="playerChoice" type="String" default="Rock"/> <!--Opción del jugador. Cambia entre Rock, Paper o Scissors-->
+    <aura:attribute name="round" type="Integer" default="1"/> <!--Número de la ronda-->
     <div>
         <h1>Rock, Paper, Scissors</h1>
         <br></br><br></br>
@@ -14,15 +16,18 @@
         </div>
         <br></br><br></br><br></br>
         <div>
+            <!--Botón que tiene una imagen de roca y que cuando se hace clic en él se llama a la función rock-->
             <lightning:button label="Rock" onclick="{!c.rock}"><img src="https://imgs.search.brave.com/exu7iLOoMhqGMWQbfav94rRWsylEzEh3YoTr_PAimfo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni81NzczLzU3NzMy/MDQucG5n" alt="Rock" style="width:100px;height:100px;"/></lightning:button>
-
+            <!--Botón que tiene una imagen de papel y que cuando se hace clic en él se llama a la función paper-->
             <lightning:button label="Paper" onclick="{!c.paper}"><img src="https://imgs.search.brave.com/57sCcUJ0jSTJNTGrjPsKll8TGId53w64uuixR328fHM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8yODEzLzI4MTMw/ODcucG5n" alt="Paper" style="width:100px;height:100px;"/></lightning:button>
-
+            <!--Botón que tiene una imagen de tijeras y que cuando se hace clic en él se llama a la función scissors-->
             <lightning:button label="Scissors" onclick="{!c.scissors}"><img src="https://imgs.search.brave.com/CfeVMg1deiBn9HmvYX0A9lO3RYRtl4hx9UBYE-qGju8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kMjlm/aHB3MDY5Y3R0Mi5j/bG91ZGZyb250Lm5l/dC9pY29uL2ltYWdl/LzQ5MTYwL3ByZXZp/ZXcuc3Zn.svg" alt="Scissors" style="width:100px;height:100px;"/></lightning:button>
         </div>
         <br></br><br></br><br></br>
+        <!--Mensaje que se muestra cuando el jugador elige una opción. Este cambia con las llamadas a los métodos rock, paper y scissors-->
         <span>Juagador {!v.playerNumber} ha elegido {!v.playerChoice}</span>
         <br></br><br></br>
+        <!--Botón que llama a la función play-->
         <lightning:button label="Jugar" onclick="{!c.play}"/>
     </div>
     

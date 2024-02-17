@@ -1,5 +1,7 @@
 <aura:component controller="Round">
+	<!--Atributo que tiene un array para objetos de la tabla Account-->
 	<aura:attribute name="puntuaciones" type="Account[]"/>
+	<!--Llamamos a la función doInit al cargar el componente-->
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 	<table>
 		<tbody>
@@ -9,17 +11,18 @@
 				<th>Elección</th>
 				<th>Resultado</th>
 			</tr>
-			<aura:iteration items="{!v.puntuaciones}" var="puntuacion">
+			<aura:iteration items="{!v.puntuaciones}" var="puntuacion"> <!--Iteramos entre el array con las puntuaciones de las rondas-->
 				<tr>
                     <td>{!puntuacion.NumberOfEmployees}</td>
 					<td>{!puntuacion.BillingCountry}</td>
 					<td>{!puntuacion.BillingCity}</td>
 					<td>{!puntuacion.BillingStreet}</td>
 				</tr>
-				
 			</aura:iteration>
 		</tbody>
 	</table>
-	<lightning:button label="Borrar Resultados" onclick="{!c.reset}"/>
-	<lightning:button label="Obtener ganadores" onclick="{!c.resultados}"/>
+	<!--Botón para borrar los resultados-->
+	<lightning:button label="Borrar Resultados" onclick="{!c.reset}"/> 
+	<!--Botón para obtener los ganadores-->
+	<lightning:button label="Obtener ganadores" onclick="{!c.resultados}"/> 
 </aura:component>	
