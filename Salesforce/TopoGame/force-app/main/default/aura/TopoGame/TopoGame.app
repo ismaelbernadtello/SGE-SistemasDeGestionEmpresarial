@@ -15,5 +15,5 @@
 	<div/>
 	<div/>
 	<!-- Añadimos la tabla de puntuaciones-->
-	<c:TablaPuntuaciones/>
+	<c:TablaPuntuaciones/> 
 </aura:application>

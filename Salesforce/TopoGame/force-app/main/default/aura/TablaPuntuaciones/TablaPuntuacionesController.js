@@ -17,7 +17,7 @@
             }
         });
 
-        $A.enqueueAction(getListScores);
+        $A.enqueueAction(getListScores); 
 
     }
 })
