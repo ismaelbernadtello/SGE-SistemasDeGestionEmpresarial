@@ -1,0 +1,16 @@
+<aura:component controller="repoApex">
+    <aura:attribute name="str" type="String" default=""/>
+    <aura:attribute name="recording" type="Boolean" default="false"/>
+    <aura:handler event="c.mensajeEvt" action="{!c.handleEvent}"/>
+    <div>
+        <lightning:button label="GRABAR" onclick="{!c.grabar}"/>
+        <lightning:button label="STOP" onclick="{!c.stop}"/>
+        <lightning:button label="PLAY" onclick="{!c.play}"/>
+        <lightning:button label="GUARDAR" onclick="{!c.guardar}"/>
+        <hr/>
+        <p>Grabando: {!v.recording}</p>
+        <hr/>
+        <p>Str: {!v.str}</p>
+    </div>
+
+</aura:component>	

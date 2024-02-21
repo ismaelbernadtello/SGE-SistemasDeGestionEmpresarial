@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute name="selectedNum" type="Integer" default=""/> <!-- Atributo para guardar el número seleccionado -->
+    <h1>SIMON DICE</h1>
+    <br></br><br></br>
+    <div>
+        <!-- Botones para seleccionar el número, en cada función se cambia selectedNum al número correspondiente -->
+        <lightning:button label="UNO" onclick="{!c.uno}"/> 
+        <lightning:button label="DOS" onclick="{!c.dos}"/> 
+        <lightning:button label="TRES" onclick="{!c.tres}"/>
+</div>
+</aura:component>	

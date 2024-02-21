@@ -1,0 +1,9 @@
+<aura:component controller="repoApex">
+    <aura:attribute name="solucionBusqueda" type="String"/>
+    <!-- input de texto -->
+    <span>Introduce el nº de grabación a mostrar: </span>
+    <input type="Integer" aura:id="inputBusqueda"/>
+    <button onclick="{!c.buscar}">Buscar</button>
+    
+    <p>Tu grabación deseada bb: {!v.solucionBusqueda}</p>
+</aura:component>	

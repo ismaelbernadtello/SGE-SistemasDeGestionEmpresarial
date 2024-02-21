@@ -1,0 +1,21 @@
+<aura:component controller="repoApex">
+    <!--Atributo que almacena los string separados por comas-->
+    <aura:attribute name="strings" type="String[]"/>
+    <!--Llamamos a la función doInit al cargar el componente-->
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<table class="borderTabla">
+		<tbody>
+			<tr>
+                <th>Jugadas</th>
+			</tr>
+			<aura:iteration items="{!v.strings}" var="string"> <!--Iteramos entre el array con los strings-->
+				<tr>
+                    <td>{!string}</td>
+				</tr>
+			</aura:iteration>
+		</tbody>
+	</table>
+
+</aura:component>	
+
+

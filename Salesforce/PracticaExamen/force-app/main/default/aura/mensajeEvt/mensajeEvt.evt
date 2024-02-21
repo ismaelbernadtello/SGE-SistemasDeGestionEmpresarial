@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <!-- Atributo para pasar el número seleccionado entre componentes -->
+    <aura:attribute name="mensaje" type="Integer"/> 
+</aura:event>

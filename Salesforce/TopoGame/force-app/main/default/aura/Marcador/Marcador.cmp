@@ -1,4 +1,4 @@
-<aura:component controller="RandomApex">
+<aura:component controller="RandomApex"> <!--Se indica que vamos a usar el controlador Random de Apex-->
 	<!-- Evento que se dispara cuando se hace click en el topo y este ha cargado su puntuación en el evento puntuacion -->
 	<aura:handler event="c.Puntuacion" action="{!c.manejarEvento}"/>
 

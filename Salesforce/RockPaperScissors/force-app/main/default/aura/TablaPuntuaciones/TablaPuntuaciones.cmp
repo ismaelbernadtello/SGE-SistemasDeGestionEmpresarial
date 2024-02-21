@@ -1,4 +1,4 @@
-<aura:component controller="Round">
+<aura:component controller="Round"> <!--Indicamos que usamos el controlador Round de Apex-->
 	<!--Atributo que tiene un array para objetos de la tabla Account-->
 	<aura:attribute name="puntuaciones" type="Account[]"/>
 	<!--Llamamos a la función doInit al cargar el componente-->

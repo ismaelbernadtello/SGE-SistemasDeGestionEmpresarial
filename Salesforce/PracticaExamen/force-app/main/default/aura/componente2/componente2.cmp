@@ -1,0 +1,23 @@
+<aura:component controller="repoApex"> <!--Indicamos que el controlador de apex de este componente es repoApex-->
+    <!--String que almacena la cadena de caracteres que grabamos-->
+    <aura:attribute name="str" type="String" default=""/>
+    <!--Atributo booleano para saber si estamos grabando o no-->
+    <aura:attribute name="recording" type="Boolean" default="false"/> 
+
+    <!--Handler que se ejcuta cuando se lanza el evento mensajeEvt y llama a la función handleEvent-->
+    <aura:handler event="c.mensajeEvt" action="{!c.handleEvent}"/>
+
+    <div>
+        <!--Botones para grabar, parar, reproducir y guardar el orden de los números-->
+        <lightning:button label="GRABAR" onclick="{!c.grabar}"/>
+        <lightning:button label="STOP" onclick="{!c.stop}"/>
+        <lightning:button label="PLAY" onclick="{!c.play}"/>
+        <lightning:button label="GUARDAR" onclick="{!c.guardar}"/>
+        <lightning:button label="BORRAR" onclick="{!c.borrar}"/>
+        <hr/>
+        <p>Grabando: {!v.recording}</p>
+        <hr/>
+        <p>Str: {!v.str}</p>
+    </div>
+
+</aura:component>	

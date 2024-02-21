@@ -1,0 +1,9 @@
+<aura:application>
+    <c:componente1/>
+    <hr/>
+    <c:componente2/>
+    <hr/>
+    <c:listado/>
+    <hr/>
+    <c:inputBusqueda/>
+</aura:application>	
